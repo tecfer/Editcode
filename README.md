@@ -1,2 +1,2 @@
-# editcode
+# Editcode
 Editor de ficheros Android 
