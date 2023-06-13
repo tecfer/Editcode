@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">EditCode</string>
+    <string name="Abrir">Abrir</string>
+    <string name="Guardar">Guardar</string>
+    <string name="G.Como">G.Como</string>
+    <string name="Salir">Salir</string>
+</resources>

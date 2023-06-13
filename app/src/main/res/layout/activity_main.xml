@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingTop="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/openButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="8dp"
+        android:onClick="openFile"
+        android:text="@string/Abrir" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="8dp"
+        android:layout_toEndOf="@id/openButton"
+        android:layout_toRightOf="@id/openButton"
+        android:onClick="guardarArchivo"
+        android:text="@string/Guardar" />
+
+    <Button
+        android:id="@+id/saveAsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="8dp"
+        android:layout_toEndOf="@id/saveButton"
+        android:layout_toRightOf="@id/saveButton"
+        android:text="@string/G.Como" />
+
+    <Button
+        android:id="@+id/closeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="8dp"
+        android:layout_toEndOf="@id/saveAsButton"
+        android:layout_toRightOf="@id/saveAsButton"
+        android:text="@string/Salir" />
+
+    <EditText
+        android:id="@+id/fileContentEditText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/openButton"
+        android:gravity="top|start"
+        android:inputType="textMultiLine"
+        android:lines="10"/>
+
+</RelativeLayout>
