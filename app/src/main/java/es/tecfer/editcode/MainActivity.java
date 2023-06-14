@@ -138,69 +138,6 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
     }
-    private void guardarArchivo() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Guardar archivo");
-        builder.setMessage("¿Dónde quieres guardar el archivo?");
-        builder.setCancelable(true);
-        builder.setPositiveButton("Interna", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                guardarArchivoInterna();
-            }
-        });
-        builder.setNegativeButton("Externa", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                guardarArchivoExterna();
-            }
-        });
-        AlertDialog dialog = builder.create();
-        dialog.show();
-    }
-
-    private void guardarArchivoInterna() {
-        String filename = currentFileName;
-        String fileContents = fileContentEditText.getText().toString();
-
-        FileOutputStream outputStream;
-
-        try {
-            outputStream = openFileOutput(filename, MODE_PRIVATE);
-            outputStream.write(fileContents.getBytes());
-            outputStream.close();
-            Toast.makeText(MainActivity.this, "Archivo guardado en almacenamiento interno", Toast.LENGTH_LONG).show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void guardarArchivoExterna() {
-        String filename = currentFileName;
-        String fileContents = fileContentEditText.getText().toString();
-
-        File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(), filename);
-        try {
-            FileOutputStream outputStream = new FileOutputStream(file);
-            outputStream.write(fileContents.getBytes());
-            outputStream.close();
-            Toast.makeText(MainActivity.this, "Archivo guardado en almacenamiento externo", Toast.LENGTH_LONG).show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void mostrarDialogo(String titulo, String mensaje) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(titulo);
-        builder.setMessage(mensaje);
-        builder.setCancelable(true);
-        builder.setPositiveButton("Aceptar", null);
-        AlertDialog dialog = builder.create();
-        dialog.show();
-    }
-
-
     public void openFile() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED) {
@@ -231,7 +168,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-
     private String readFileContent(Uri uri) {
         StringBuilder stringBuilder = new StringBuilder();
         try {
