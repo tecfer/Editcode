@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <group android:id="@+id/theme_group" android:checkableBehavior="single">
+    <group android:id="@+id/theme_group">
         <item
             android:id="@+id/openButton"
             android:title="@string/Abrir" />

@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (checkPermission()) {
-                    Toast.makeText(MainActivity.this, "Se podrá guardar el archivo próximamente", Toast.LENGTH_LONG).show();;
+                    Toast.makeText(MainActivity.this, "Se podrá guardar el archivo próximamente", Toast.LENGTH_LONG).show();
                 } else {
                     requestPermission();
                 }
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (checkPermission()) {
-                    Toast.makeText(MainActivity.this, "Se podrá guardar el archivo próximamente", Toast.LENGTH_LONG).show();;
+                    Toast.makeText(MainActivity.this, "Se podrá guardar el archivo próximamente", Toast.LENGTH_LONG).show();
                 } else {
                     requestPermission();
                 }
@@ -104,9 +104,15 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int itemId = item.getItemId();
         if (itemId == R.id.openButton) {
-            //openFile();
+            openFile();
             return true;
-        } else if (itemId == R.id.closeButton) {
+        } else if (itemId == R.id.saveButton) {
+            Toast.makeText(MainActivity.this, "Se podrá guardar el archivo próximamente", Toast.LENGTH_LONG).show();
+            return true;
+        }else if (itemId == R.id.saveAsButton) {
+            Toast.makeText(MainActivity.this, "Se podrá guardar el archivo próximamente", Toast.LENGTH_LONG).show();
+            return true;
+        }else if (itemId == R.id.closeButton) {
             finish();
             return true;
         }
